@@ -8,6 +8,10 @@ import Navbar from './components/Navbar';
 import Signin from './components/Signin';
 import MakePayment from './components/MakePayment';
 import Addproducts from './components/Addproducts';
+import { BookingCart } from './components/BookingCart';
+import { PropertyMap } from './components/PropertyMap';
+import { Chatbot } from './components/Chatbot';
+import { FilterBar } from './components/FilterBar';
 
 function App() {
   // const user=JSON.parse(localStorage.getItem("user"))
@@ -24,7 +28,13 @@ function App() {
         <Route path='/makepayment' element={<MakePayment/>}/>
         <Route path='/addproducts' element={<Addproducts/>}/>
         <Route path='/navbar' element={<Navbar/>}/>
+        <Route path="/cart" element={<BookingCart/>} />
+        <Route path='/map' element={<PropertyMap/>}/>
+        <Route path='/bot' element={<Chatbot/>}/>
+        <Route path='/Filter' element={<FilterBar/>}/>
+
       </Routes>
+      <Chatbot />
 
     </Router>
   );

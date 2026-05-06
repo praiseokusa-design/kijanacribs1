@@ -10,8 +10,13 @@ const MakePayment = () => {
     const [message, setMessage] = useState()
     const [error, setError] = useState()
     // we extract the state product that has been sent/passed to this component
-    const { product } = useLocation().state || {} //-->>.state(is used to access the data from getproducts)
-    console.log(product)
+    const location = useLocation();
+    const product = location.state?.product;
+
+    if (!product) {
+        return <div className="text-center mt-5"><h5>No product selected for payment.</h5></div>;
+    }
+
     const img_url = "https://kus-kus.alwaysdata.net/static/images/"
 
     const submit = async (e) => {
@@ -43,7 +48,9 @@ const MakePayment = () => {
                 <h1 className='text-success'>Lipa na M-pesa</h1>
                 <div className="col-md-6 text-center ">
                     <div className="card shadow p-1">
-                        <img src={img_url + product.product_photo} alt="" className='product_img mt-4 p-3' />
+                        {product.product_photo && (
+                            <img src={img_url + product.product_photo} alt="" className='product_img mt-4 p-3' />
+                        )}
                         <div className="card-body">
                             <h5>Product name:{product.product_name} </h5>
                             <p className='text-muted'>Descritpion:{product.product_description}</p>
@@ -74,6 +81,3 @@ const MakePayment = () => {
 }
 
 export default MakePayment
-
-
-

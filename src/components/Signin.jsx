@@ -74,7 +74,7 @@ const Signin = () => {
             <br/>
             <br/>
             
-            <input type="password" placeholder="Enter Password" className='form-control'  reqired value={password} onChange={(e)=>setPassword(e.target.value)}/>
+            <input type="password" placeholder="Enter Password" className='form-control' required value={password} onChange={(e)=>setPassword(e.target.value)}/>
             {/* for user to actually be able to type in the input box,we need to put (onChange),so that a change in state is recognized and  value stored displayed  */}
             <br/>
             <br/>
