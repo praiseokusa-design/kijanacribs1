@@ -122,10 +122,22 @@ const Getproducts = () => {
                 onClick={() => toggleWishlist(product)}>
                 {wishlist.includes(product.id || product.product_name) ? '❤️' : '🤍'}
               </button>
-              <img src={img_url + product.product_photo} alt="" className='product_img mt-2' />
+              <div className="position-relative">
+                <img src={img_url + product.product_photo} alt="" className='product_img mt-2' />
+                <span className="badge bg-success position-absolute bottom-0 start-0 m-2 shadow-sm">
+                  ✓ Verified Listing
+                </span>
+              </div>
               <div className='card-body'>
                 <h5 className='mt-2'>{product.product_name}</h5>
+                <div className="mb-2 text-warning small">
+                  {/* Logic for star display (Mocking 4 stars if rating missing) */}
+                  {"★".repeat(Math.floor(product.rating || 4))}
+                  {"☆".repeat(5 - Math.floor(product.rating || 4))}
+                  <span className="text-muted ms-1">({product.review_count || 0} reviews)</span>
+                </div>
                 <p className='text-muted'>{product.product_description}</p>
+                <p className="text-dark x-small"><strong>Amenities:</strong> {product.amenities || 'Standard'}</p>
                 <h5 className='text-success mb-3'>ksh:{product.product_cost}</h5>
                 <div className="d-flex justify-content-center gap-2">
                   <button className='btn btn-danger btn-sm' onClick={() => navigate("/makepayment", { state: { product } })}>

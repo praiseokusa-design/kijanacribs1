@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { produce } from 'immer';
-import check from 'check-types';
+// import check from 'check-types';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';

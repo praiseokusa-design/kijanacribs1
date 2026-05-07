@@ -24,7 +24,7 @@ const Signin = () => {
     setLoading("Please wait while we are sign you in...")
 
     try {
-      const data=new FormData
+      const data=new FormData()
       data.append("email",email)
       data.append("password",password)
       //send data object to flask,server via endpoint

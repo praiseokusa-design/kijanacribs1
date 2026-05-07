@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 //rfce
-import { Form, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 
@@ -24,7 +24,7 @@ const MakePayment = () => {
         setError()
         setMessage("Please wait as we process your payment")
         try {
-            const data = new FormData
+            const data = new FormData()
             //from mpesa_payment in insomnia
             data.append("phone", phone)
             data.append("amount", product.product_cost)

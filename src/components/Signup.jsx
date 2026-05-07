@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link, Links } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 

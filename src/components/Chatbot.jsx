@@ -129,7 +129,7 @@ export const Chatbot = () => {
 
     // Matching Logic (Ported from your Python script)
     setTimeout(() => {
-      let foundAnswer = false;
+      // let foundAnswer = false;
       let botResponse = "Sorry, I don't know that one. Try asking about locations, pricing, or specific crib types!";
 
       for (const item of CHAT_DATA) {
@@ -140,7 +140,7 @@ export const Chatbot = () => {
 
         if (regex.test(currentMessage)) {
           botResponse = item.Response;
-          foundAnswer = true;
+          // foundAnswer = true;
           break;
         }
       }
